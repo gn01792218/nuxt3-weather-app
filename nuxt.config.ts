@@ -1,5 +1,4 @@
 import { defineNuxtConfig } from "nuxt";
-
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     css: ["~/assets/css/style.css"],
@@ -12,5 +11,8 @@ export default defineNuxtConfig({
                 }
             }
         }
+    },
+    publicRuntimeConfig: {
+        WEATER_API_KEY: process.env.WEATER_API_KEY
     },
 });

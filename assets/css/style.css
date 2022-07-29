@@ -10,3 +10,8 @@
 .overlay{
     @apply bg-[rgb(0,0,0,0.5)]
 }
+
+/* btn */
+.primary-btn{
+    @apply bg-cyan-500 border-2 px-2 rounded-md hover:bg-cyan-600;
+}

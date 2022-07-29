@@ -9,14 +9,8 @@ Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 Make sure to install the dependencies:
 
 ```bash
-# yarn
-yarn install
-
 # npm
 npm install
-
-# pnpm
-pnpm install --shamefully-hoist
 ```
 
 ## Development Server
@@ -40,5 +34,25 @@ Locally preview production build:
 ```bash
 npm run preview
 ```
-
 Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+## 如何使用env參數?
+### 1.建立env檔案
+```bash
+//.env
+WEATER_API_KEY=4c59c04a41
+```
+### 2.設置nuxt.config.Ts
+```ts
+import { defineNuxtConfig } from "nuxt";
+// https://v3.nuxtjs.org/api/configuration/nuxt.config
+export default defineNuxtConfig({
+    publicRuntimeConfig: {
+        WEATER_API_KEY: process.env.WEATER_API_KEY
+    },
+});
+```
+### 3.在元件中引用
+```ts
+const config = useRuntimeConfig();
+console.log(config.WEATER_API_KEY)
+```
